@@ -1,8 +1,55 @@
 .header
 	@extends $mainContainer
+	position relative
+	height $headerHeight
+	line-height $headerHeight
+	overflow hidden
+	&:after
+		@extends $clearBoth
 
-.header__logo
-	padding-top 15px
+	.header__logo
+		absoluteElement(absolute, 50%, 15px)
+		@extend $centerElementY
 
-button
-	@extends $mainButton
+	.header__navigation
+		float right
+		@extend $transitionSlow
+
+	.navigation__link
+		@extend $textUppercase
+		@extend $robotoBlack
+		margin-right 1rem
+
+	.header__menu-icon
+		sizeElement(50px, 35px)
+		transform translateY(-50%) translateX(150%)
+		position absolute
+		top 50%
+		right 15px
+		@extend $transitionSlow
+
+		&:hover
+			cursor pointer
+
+	.menu-icon__line
+		sizeElement(90%, 4px)
+		@extend $centerElement
+		background-color $white
+		border-radius 4px
+		absoluteElement(absolute, 50%, 50%)
+
+		&:after, &:before
+			@extend $pseudoElement
+			sizeElement(100%, 4px)
+			background-color $white
+			border-radius 4px
+			@extend $centerElementX
+			left 50%
+
+		&:before
+			top -12px
+
+		&:after
+			top 12px
+
+

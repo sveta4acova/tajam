@@ -1,2 +1,40 @@
 header.header
 	img.header__logo(src="./assets/images/logo-header.png")
+	-
+		var headerLinks = [
+			{
+				linkContent: 'home',
+				linkAnchor: '#home'
+			},
+			{
+				linkContent: 'about',
+				linkAnchor: '#about'
+			},
+			{
+				linkContent: 'expertise',
+				linkAnchor: '#expertise'
+			},
+			{
+				linkContent: 'teams',
+				linkAnchor: '#teams'
+			},
+			{
+				linkContent: 'works',
+				linkAnchor: '#works'
+			},
+			{
+				linkContent: 'people say',
+				linkAnchor: '#comments'
+			},
+			{
+				linkContent: 'contact',
+				linkAnchor: '#contact'
+			}
+		]
+
+	nav.header__navigation
+		for link in headerLinks
+			a.navigation__link(href=link.linkAnchor) #{link.linkContent}
+
+	.header__menu-icon
+		.menu-icon__line

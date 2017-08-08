@@ -1,3 +1,4 @@
+//color variables
 $accentColor = #00e0d0
 $purple = #322955
 $purpleShadow = rgb(62, 52, 97, .8)
@@ -8,6 +9,12 @@ $gray = #716e78
 $grayAnother = #666666
 $grayLight = #a09ea5
 
+
+//numeric variables
+$headerHeight = 80px
+
+
+//extends
 $mainContainer
 	width 60.6vw
 	max-width 970px
@@ -18,8 +25,6 @@ $mainContainer
 	@media screen and (max-width: 767px)
 		width 100%
 
-$fontWeight
-	font-wheight bold
 
 $mainButton
 	border 1px solid $accentColor
@@ -30,5 +35,77 @@ $mainButton
 	padding 10px 15px 8.5px 15px
 	background-color transparent
 
+$clearBoth
+	content ''
+	display block
+	clear both
+
+$pseudoElement
+	content ''
+	display block
+	position absolute
+
+$centerElement
+	transform translate(-50%, -50%)
+
+$centerElementY
+	transform translateY(-50%)
+
+$centerElementX
+	transform translateX(-50%)
+
+$robotoBlack
+	font-family "Roboto-Black"
+
+$fontWeight
+	font-wheight bold
+
+$textUppercase
+	text-transform uppercase
+
+$defaultFontSize
+	font-size linear-interpolation((320px 12px) (1600px 14px))
+
+$middleFontSize
+	font-size linear-interpolation((320px 14px) (1600px 16px))
+
+$bigFontSize
+	font-size linear-interpolation((320px 18px) (1600px 22px))
+
+$biggerFontSize
+	font-size linear-interpolation((320px 28px) (1600px 32px))
+
 $transitionDefault
 	transition all .3s;
+
+$transitionSlow
+	transition all .5s;
+
+//mixins
+absoluteElement(position, top, left)
+	position position
+	top top
+	left left
+
+sizeElement(width, height)
+	width width
+	height height
+
+linear-interpolation($map)
+	if (length(keys($map)) != 2)
+		error('Map must have exactly 2 values.')
+	$keys   = keys($map)
+	$values = values($map)
+	$max-width = unit(pop($keys), '')
+	$max-size  = unit(pop($values), '')
+	$min-width = unit(pop($keys), '')
+	$min-size  = unit(pop($values), '')
+	$slope       = unit(($max-size - $min-size) / ($max-width - $min-width), '')
+	$y-intercept = $min-size - $slope * $min-width
+	$sign = \+
+	if $y-intercept < 0
+		$sign = \-
+		$y-intercept = abs($y-intercept)
+	unquote('calc(' + unit($slope * 100, vw) + ' ' + $sign + ' ' + unit($y-intercept, px) + ')')
+
+

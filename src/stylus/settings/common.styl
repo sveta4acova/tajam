@@ -9,5 +9,16 @@
 body
 	font-family "Roboto-Light"
 	background-color $purple
-	font-size 14px
+	@extend $defaultFontSize
 	line-height 1.7
+
+a
+	color $white
+	@extend $transitionDefault
+	text-decoration none
+
+	&:hover
+		color $accentColor
+	&:active, &:visited
+		color: $white
+

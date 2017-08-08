@@ -80,6 +80,25 @@ module.exports = function(grunt) {
 			}
 		},
 
+		concat: {
+			options: {
+				banner: "'use strict';\n",
+				separator: ';'
+			},
+			dist: {
+				src: ['src/js/carousel.js'],
+				dest: 'tmp/main.js'
+			},
+		},
+
+		uglify: {
+			my_target: {
+				files: {
+					'assets/js/main.min.js': ['tmp/main.js']
+				}
+			}
+		},
+
 		watch: {
 			stylus_watch: {
 				files: ['src/stylus/**/*.styl'], //Изменяемые файлы
@@ -96,9 +115,17 @@ module.exports = function(grunt) {
 					spawn: false,
 					livereload: true
 				}
+			},
+			js_watch: {
+				files: ['src/js/*.js'], //Изменяемые файлы
+				tasks: ['build_js'],
+				options: {
+					spawn: false,
+					livereload: true
+				}
 			}
 		}
-  });
+	});
 
   // Load the plugin that provides the "uglify" task.
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -108,9 +135,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-svgstore');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
 	grunt.registerTask('build_styles', ['concat_css', 'stylus', 'autoprefixer', 'cssmin']);
+	grunt.registerTask('build_js', ['concat', 'uglify']);
 	grunt.registerTask('svg_concat', ['svgstore']);
-	grunt.registerTask('default', ['pug', 'build_styles', 'watch']);
+	grunt.registerTask('default', ['pug', 'build_styles', 'build_js', 'watch']);
 };
