@@ -1,0 +1,21 @@
+{
+  "name": "tajam",
+  "description": "",
+  "main": "",
+  "authors": [
+    "sveta4acova <sshurlachakova@oneclickdev.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
