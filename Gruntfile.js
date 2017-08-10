@@ -67,9 +67,9 @@ module.exports = function(grunt) {
 
 		svgstore: {
 			options: {
-				prefix : 'shape-', // This will prefix each <g> ID
+				prefix: 'shape-', // This will prefix each <g> ID
 				svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
-					viewBox : '0 0 100 100',
+					viewBox: '0 0 100 100',
 					xmlns: 'http://www.w3.org/2000/svg'
 				}
 			},
@@ -86,9 +86,9 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			dist: {
-				src: ['src/js/carousel.js'],
+				src: ['src/js/globals.js', 'src/js/carousel.js', 'src/js/menu.js' ],
 				dest: 'tmp/main.js'
-			},
+			}
 		},
 
 		uglify: {
@@ -96,6 +96,19 @@ module.exports = function(grunt) {
 				files: {
 					'assets/js/main.min.js': ['tmp/main.js']
 				}
+			}
+		},
+
+		validation: { // Grunt w3c validation plugin
+			options: {
+				reset: grunt.option('reset') || false,
+				stoponerror: false,
+				generateCheckstyleReport: 'validation.xml',
+				relaxerror: ['Bad value X-UA-Compatible for attribute http-equiv on element meta.',
+					'Element title must not be empty.']
+			},
+			files: {
+				src: ['index.html']
 			}
 		},
 
@@ -137,13 +150,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-svgstore');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-html');
-	grunt.loadNpmTasks('grunt-html-validation');
+	grunt.loadNpmTasks('grunt-w3c-html-validation');
 
   // Default task(s).
 	grunt.registerTask('build_styles', ['concat_css', 'stylus', 'autoprefixer', 'cssmin']);
 	grunt.registerTask('build_js', ['concat', 'uglify']);
 	grunt.registerTask('svg_concat', ['svgstore']);
-	grunt.registerTask('html_validation', ['htmllint']);
+	grunt.registerTask('html_validation', ['validation']);
 	grunt.registerTask('default', ['pug', 'build_styles', 'build_js', 'watch']);
 };

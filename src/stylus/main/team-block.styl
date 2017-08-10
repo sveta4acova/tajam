@@ -9,12 +9,12 @@
 	.team-block-container
 		@extend $mainContainer
 		@extend $blocksPadding
+		@extend $centerText
 		position relative
 		z-index 2
 
 	.team-block__caption,
 	.team-block__description
-		@extend $centerText
 		color $white
 
 	.team-block__description
@@ -24,3 +24,29 @@
 			@extend $smallDivider
 			background-color $whiteOpacity
 			bottom -10px
+
+	.team-block__preview
+		margin-bottom 70px
+		&:after
+			@extend $clearBoth
+
+	.preview-block
+		float left
+		width 23%
+		&:not(:last-child)
+			margin-right 1%
+
+		for block in 1 2 3 4
+			&:nth-child({block}) .preview-block__img
+				background-image url('../images/team-photos/photo-0' + block + '.jpg')
+
+	.preview-block__img
+		@extend $backgroundPosition
+		border-bottom 1px solid $whiteSemi
+
+	.team-block__paragraph
+		margin-bottom 25px
+		color $white
+
+	.team-block__link
+		@extend $accentLink

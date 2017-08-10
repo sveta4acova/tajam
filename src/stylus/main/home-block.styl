@@ -12,9 +12,11 @@
 		padding-top 35vh
 		z-index 2
 
+	.carousel__slide
+		@extend $centerText
+
 	.slide__caption
 		position relative
-		@extend $centerText
 		margin-bottom 56px
 
 		&:after
@@ -23,7 +25,6 @@
 
 	.slide__description
 		color $white
-		@extend $centerText
 		@extend $centerElementMargin
 		max-width 90%
 

@@ -3,6 +3,7 @@ $accentColor = #00e0d0
 $purple = #322955
 $purpleShadow = rgba(62, 52, 97, .8)
 $white = #fff
+$whiteSemi = rgba(255, 255, 255, .5)
 $whiteOpacity = rgba(255, 255, 255, .2)
 $fullBlack = #000
 $blackPurple = #413d4b
@@ -84,8 +85,7 @@ $smallDivider
 	transform translateX(-50%)
 
 $accentLink
-	display block
-	max-width 121px
+	display inline-block
 	border 1px solid $accentColor
 	color $accentColor
 	text-transform uppercase
@@ -156,9 +156,11 @@ $bigFontSize
 $biggerFontSize
 	font-size linear-interpolation((320px 28px) (1600px 32px))
 
+$hugeFontSize
+	font-size linear-interpolation((320px 40px) (1600px 70px))
+
 $transitionDefault
 	transition all .3s;
 
 $transitionSlow
 	transition all .5s;
-

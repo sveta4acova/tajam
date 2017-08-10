@@ -1,10 +1,11 @@
 include ../blocks/data.pug
 
-header.header
-	img.header__logo(src="./assets/images/logo-header.png")
-	nav.header__navigation
-		for link in headerLinks
-			a.navigation__link(href=link.linkAnchor) #{link.linkContent}
+section.header-container
+	header.header
+		img.header__logo(src="./assets/images/logo-header.png" alt="")
+		nav.header__navigation
+			for link in headerLinks
+				a.navigation__link(href=link.linkAnchor) #{link.linkContent}
 
-	.header__menu-icon
-		.menu-icon__line
+		.header__menu-icon
+			.menu-icon__line

@@ -1,0 +1,21 @@
+.comments-block
+	position relative
+	background-image url('../images/backgrounds/image-04.jpg')
+	@extend $blocksPadding
+	&:after
+		@extend $purpleShadow
+
+	.carousel-container
+		@extend $mainContainer
+		position relative
+		z-index 2
+
+	.carousel-commentators
+		width 310px
+		@extend $centerElementMargin
+
+	.slide
+		height 50px
+		background-color red
+		border-radius 50%
+		margin 0 auto

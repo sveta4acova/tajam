@@ -1,0 +1,32 @@
+.clients-block
+	@extend $mainContainer
+	@extend $blocksPadding
+	position relative
+	&:after
+		@extend $clearBoth
+
+	h2
+		margin-bottom 40px
+
+	.clients-block__feedback,
+	.clients-block__group
+		float left
+		width 50%
+
+	.group__logo-container
+		position relative
+		&:after
+			@extend $clearBoth
+
+	.logo
+		float left
+		sizeElement(34%, 70px)
+		max-width 162px
+		@extend $centerText
+		margin-bottom 15px
+		&:nth-child(odd)
+			margin-right 15%
+
+	img
+		sizeElement(100%, auto)
+		max-height 70px

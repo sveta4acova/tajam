@@ -2,11 +2,13 @@ extends ../blocks/default.pug
 block content
 	include ../blocks/data.pug
 	include ../blocks/short-description-block.pug
+	include ../blocks/preview-block.pug
+	include ../blocks/comment-block.pug
 
 	section.home-block
 		.carousel-block
 			.carousel
-				for slide in carouselSlides
+				each slide in carouselSlides
 					.carousel__slide
 						h1.slide__caption #{slide.caption}
 						p.slide__description #{slide.description}
@@ -33,10 +35,56 @@ block content
 		h2.expertise-block__caption EXPERTISE
 		p.expertise-block__description Lorem ipsum dolor sit amet proin gravida nibh vel velit
 		.short-description-block-wrapper
-			for item in shortDescriptionItems
+			each item in shortDescriptionItems
 				+short-description-block(item)
 
 	section.team-block
 		.team-block-container
 			h2.team-block__caption MEET OUR AMAZING TEAM
 			p.team-block__description Lorem ipsum dolor sit amet proin gravida nibh vel velit
+			.team-block__preview
+				for item in previewBlockItems
+					+preview-block(item)
+			p.team-block__paragraph Become part of our dream team, let’s join us !
+			a.team-block__link(href="/") we are hiring
+
+	section.works-block
+		header.works-block__header
+			h2.header__caption our works
+			a(href="/").header__link-see See All Project in dribbble
+		.works-block__content
+			.preview-container
+				each block in workLinks
+					a(href=block.href).preview-container__work
+						.preview-container__work_hover
+							span learn more
+			a(href="/").preview-container__link load more
+
+	section.comments-block
+		.carousel-container
+			.carousel-comments
+				each item in commentBlocks
+					+comment-block(item)
+			.carousel-commentators
+				each item in [1, 2, 3, 4, 5, 6, 7, 8]
+					.carousel-commentators__slide
+						.slide
+
+	section.clients-block
+		.clients-block__feedback
+			h2.feedback__caption GIVE US A GOOD NEWS
+			input(name="name" placeholder="Name")
+			input(name="email" placeholder="Email")
+			input(name="phone" placeholder="Phone")
+			textarea(name="message" placeholder="Your Message")
+		.clients-block__group
+			h2.group__caption OUR HAPPY CLIENT
+			.group__logo-container
+				each item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+					.logo
+						img(alt="" src="./assets/images/clients/logo-0" + item + '.png')
+
+	section.footer-container
+		footer.footer
+
+

@@ -1,0 +1,72 @@
+.works-block
+	.works-block__header
+		@extend $mainContainer
+		@extend $blocksPadding
+		&:after
+			@extend $clearBoth
+
+	.header__caption
+		float left
+
+	.header__link-see
+		position relative
+		color $blackPurple
+		padding-right 10px
+		float right
+		line-height 3
+		@extend $transitionDefault
+		&:hover
+			text-decoration underline
+		&:after
+			@extend $pseudoElement
+			sizeElement(8px, 8px)
+			border 1px solid $blackPurple
+			transform rotate(45deg) translateY(-50%)
+			top 48%
+			right 2px
+			border-left-color transparent
+			border-bottom-color transparent
+
+	.works-block__content
+		@extend $centerText
+
+	.preview-container
+		&:after
+			@extend $clearBoth
+
+	.preview-container__work
+		position relative
+		overflow hidden
+		float left
+		sizeElement(20%, 20vw)
+		cursor pointer
+		&:nth-child(odd)
+			background-color $gray
+
+		&:nth-child(even)
+			background-color $grayLight
+
+		&:hover .preview-container__work_hover
+			transform translateY(0)
+
+
+	.preview-container__work_hover
+		sizeElement(100%, 100%)
+		position absolute
+		top 0
+		left 0
+		background-color $purpleShadow
+		transform translateY(-100%)
+		@extend $transitionSlow
+		span
+			display block
+			@extend $absoluteElementPosition
+			@extend $centerElement
+			@extend $robotoBlack
+			text-transform uppercase
+
+
+	.preview-container__link
+		@extend $accentLink
+		margin 70px auto
+
