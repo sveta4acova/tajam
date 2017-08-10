@@ -1,0 +1,26 @@
+.team-block
+	@extend $backgroundPosition
+	background-image url(../images/backgrounds/image-03.jpg)
+	position relative
+	&:before
+		@extend $purpleShadow
+		z-index 1
+
+	.team-block-container
+		@extend $mainContainer
+		@extend $blocksPadding
+		position relative
+		z-index 2
+
+	.team-block__caption,
+	.team-block__description
+		@extend $centerText
+		color $white
+
+	.team-block__description
+		margin-bottom 70px
+		position relative
+		&:after
+			@extend $smallDivider
+			background-color $whiteOpacity
+			bottom -10px

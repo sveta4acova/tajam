@@ -1,85 +1,22 @@
 //color variables
 $accentColor = #00e0d0
 $purple = #322955
-$purpleShadow = rgb(62, 52, 97, .8)
+$purpleShadow = rgba(62, 52, 97, .8)
 $white = #fff
+$whiteOpacity = rgba(255, 255, 255, .2)
 $fullBlack = #000
 $blackPurple = #413d4b
 $gray = #716e78
 $grayAnother = #666666
 $grayLight = #a09ea5
+$grayVeryLight = #ebebeb
+$grayMiddle = #c6c4c9
+
 
 
 //numeric variables
 $headerHeight = 80px
 
-
-//extends
-$mainContainer
-	width 60.6vw
-	max-width 970px
-	padding 0 15px
-	margin 0 auto
-	@media screen and (max-width: 992px)
-		width: 76vw
-	@media screen and (max-width: 767px)
-		width 100%
-
-
-$mainButton
-	border 1px solid $accentColor
-	color $accentColor
-	text-transform uppercase
-	font-family "Hammersmith-One-Regular"
-	font-size 16px
-	padding 10px 15px 8.5px 15px
-	background-color transparent
-
-$clearBoth
-	content ''
-	display block
-	clear both
-
-$pseudoElement
-	content ''
-	display block
-	position absolute
-
-$centerElement
-	transform translate(-50%, -50%)
-
-$centerElementY
-	transform translateY(-50%)
-
-$centerElementX
-	transform translateX(-50%)
-
-$robotoBlack
-	font-family "Roboto-Black"
-
-$fontWeight
-	font-wheight bold
-
-$textUppercase
-	text-transform uppercase
-
-$defaultFontSize
-	font-size linear-interpolation((320px 12px) (1600px 14px))
-
-$middleFontSize
-	font-size linear-interpolation((320px 14px) (1600px 16px))
-
-$bigFontSize
-	font-size linear-interpolation((320px 18px) (1600px 22px))
-
-$biggerFontSize
-	font-size linear-interpolation((320px 28px) (1600px 32px))
-
-$transitionDefault
-	transition all .3s;
-
-$transitionSlow
-	transition all .5s;
 
 //mixins
 absoluteElement(position, top, left)
@@ -108,4 +45,120 @@ linear-interpolation($map)
 		$y-intercept = abs($y-intercept)
 	unquote('calc(' + unit($slope * 100, vw) + ' ' + $sign + ' ' + unit($y-intercept, px) + ')')
 
+//extends
+$mainContainer
+	width 60.6vw
+	max-width 970px
+	padding 0 15px
+	margin 0 auto
+	@media screen and (max-width: 1024px)
+		width: 76vw
+	@media screen and (max-width: 767px)
+		width 100%
+
+$blocksPadding
+	padding-top 70px
+	padding-bottom 70px
+	@media screen and (max-width: 1024px)
+		padding-top 35px
+		padding-bottom 35px
+
+$purpleShadow
+	content ''
+	display block
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background-color $purpleShadow
+
+$smallDivider
+	content ''
+	display block
+	position absolute
+	left 50%
+	width 50px
+	height 1px
+	background-color $accentColor
+	transform translateX(-50%)
+
+$accentLink
+	display block
+	max-width 121px
+	border 1px solid $accentColor
+	color $accentColor
+	text-transform uppercase
+	font-family "Hammersmith-One-Regular"
+	font-size 16px
+	padding 10px 15px 8.5px 15px
+	background-color transparent
+	white-space nowrap
+
+$clearBoth
+	content ''
+	display block
+	clear both
+
+$pseudoElement
+	content ''
+	display block
+	position absolute
+
+$backgroundPosition
+	background-size cover
+	background-position center
+
+$absoluteElementPosition
+	position absolute
+	top 50%
+	left 50%
+
+$centerElement
+	transform translate(-50%, -50%)
+
+$centerElementY
+	transform translateY(-50%)
+
+$centerElementX
+	transform translateX(-50%)
+
+$centerElementMargin
+	margin 0 auto
+
+$centerText
+	text-align center
+
+$robotoBlack
+	font-family "Roboto-Black"
+
+$playfairBlack
+	font-family "Playfair-Display-Black"
+
+$playfairRegular
+	font-family "Playfair-Display-Regular"
+
+$fontWeight
+	font-wheight bold
+
+$textUppercase
+	text-transform uppercase
+
+$defaultFontSize
+	font-size linear-interpolation((320px 12px) (1600px 14px))
+
+$middleFontSize
+	font-size linear-interpolation((320px 14px) (1600px 16px))
+
+$bigFontSize
+	font-size linear-interpolation((320px 18px) (1600px 22px))
+
+$biggerFontSize
+	font-size linear-interpolation((320px 28px) (1600px 32px))
+
+$transitionDefault
+	transition all .3s;
+
+$transitionSlow
+	transition all .5s;
 

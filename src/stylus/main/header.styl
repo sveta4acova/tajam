@@ -1,9 +1,12 @@
 .header
 	@extends $mainContainer
-	position relative
+	position fixed
+	left 0
+	right 0
 	height $headerHeight
 	line-height $headerHeight
 	overflow hidden
+	z-index 3
 	&:after
 		@extends $clearBoth
 

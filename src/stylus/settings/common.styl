@@ -8,9 +8,10 @@
 
 body
 	font-family "Roboto-Light"
-	background-color $purple
 	@extend $defaultFontSize
+	background-color $white
 	line-height 1.7
+	color $gray
 
 a
 	color $white
@@ -22,3 +23,15 @@ a
 	&:active, &:visited
 		color: $white
 
+h1
+	text-transform capitalize
+	@extend $playfairBlack
+	@extend $biggerFontSize
+	color $white
+
+h2
+	color $blackPurple
+	@extend $playfairRegular
+	font-weight bold
+	@extend $bigFontSize
+	text-transform uppercase

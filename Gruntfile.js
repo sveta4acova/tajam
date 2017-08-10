@@ -137,10 +137,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-svgstore');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-html');
+	grunt.loadNpmTasks('grunt-html-validation');
 
   // Default task(s).
 	grunt.registerTask('build_styles', ['concat_css', 'stylus', 'autoprefixer', 'cssmin']);
 	grunt.registerTask('build_js', ['concat', 'uglify']);
 	grunt.registerTask('svg_concat', ['svgstore']);
+	grunt.registerTask('html_validation', ['htmllint']);
 	grunt.registerTask('default', ['pug', 'build_styles', 'build_js', 'watch']);
 };

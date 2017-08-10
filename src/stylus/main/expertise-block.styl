@@ -1,0 +1,48 @@
+.expertise-block
+	@extend $mainContainer
+	@extend $blocksPadding
+
+	.expertise-block__caption,
+	.expertise-block__description
+		@extend $centerText
+
+	.expertise-block__description
+		margin-bottom 70px
+		position relative
+		&:after
+			@extend $smallDivider
+			background-color $grayMiddle
+			bottom -10px
+
+	.short-description-block-wrapper
+		&:after
+			@extend $clearBoth
+
+	.short-description-block
+		padding-top 35px
+		float left
+		width calc(100%/3)
+		max-height 270px
+		overflow hidden
+
+		.short-description-block__img
+			display inline-block
+			sizeElement(50px, 50px)
+			background-image url(../images/sprites/sprite_expertise.png)
+
+		stepPositon = 50px;
+		for block in 1 2 3 4 5 6
+			&:nth-child({block}) .short-description-block__img
+				background-position-x -(-50px + (stepPositon * block))
+				background-position-y 0
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(4),
+		&:nth-child(5)
+			border-right 1px solid $grayVeryLight
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3)
+			border-bottom 1px solid $grayVeryLight

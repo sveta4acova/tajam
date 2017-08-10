@@ -1,4 +1,42 @@
 extends ../blocks/default.pug
 block content
+	include ../blocks/data.pug
+	include ../blocks/short-description-block.pug
 
+	section.home-block
+		.carousel-block
+			.carousel
+				for slide in carouselSlides
+					.carousel__slide
+						h1.slide__caption #{slide.caption}
+						p.slide__description #{slide.description}
+						a.slide__link(href="/") #{slide.link}
 
+	section.about-block
+		.story-container
+			.story-container__img
+				img(src="./assets/images/logo.png" alt="")
+			.story-container__description
+				h2.description__caption OUR STORY
+				p.description__paragraph.
+					Pug fully integrates with Express, a popular Node.js web framework, as a supported view engine. Check out Express’s excellent guide for how to integrate Pug with Express.
+				p.description__paragraph.
+					Specifically, when process.env.NODE_ENV is set to 'production', and Pug is used with Express, the compileDebug option is false by default, while the cache option is true.
+				a(href="/").description__link learn more
+		.video-preview-container
+			.video-preview-container__play
+				.play-btn
+					img(src="./assets/images/play.png" alt="")
+				.btn-text WATCH OUR STORY
+
+	section.expertise-block
+		h2.expertise-block__caption EXPERTISE
+		p.expertise-block__description Lorem ipsum dolor sit amet proin gravida nibh vel velit
+		.short-description-block-wrapper
+			for item in shortDescriptionItems
+				+short-description-block(item)
+
+	section.team-block
+		.team-block-container
+			h2.team-block__caption MEET OUR AMAZING TEAM
+			p.team-block__description Lorem ipsum dolor sit amet proin gravida nibh vel velit

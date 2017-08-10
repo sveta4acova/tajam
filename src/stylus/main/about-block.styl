@@ -1,0 +1,57 @@
+.about-block
+	.story-container
+		position relative
+		@extend $mainContainer
+		@extend $blocksPadding
+		&:after
+			@extend $clearBoth
+
+	.story-container__img,
+	.story-container__description
+		float left
+
+	.story-container__img
+		width 40%
+
+	.story-container__description
+		width 60%
+
+	.description__caption,
+	.description__paragraph
+		margin-bottom 30px
+
+	.description__link
+		@extend $accentLink
+
+	.video-preview-container
+		position relative
+		height 550px
+		@extend $backgroundPosition
+		background-image url(../images/backgrounds/image-02.jpg)
+		&:after
+			@extend $purpleShadow
+
+	.video-preview-container__play
+		z-index 2
+		@extend $absoluteElementPosition
+		@extend $centerElement
+		@extend $centerText
+
+	.play-btn
+		display inline-block
+		sizeElement(100px, 100px)
+		position relative
+		border-radius 50%
+		border 2px solid $white
+		cursor pointer
+
+		img
+			@extend $absoluteElementPosition
+			@extend $centerElement
+			left 54%
+
+
+	.btn-text
+		@extend $robotoBlack
+		color $white
+		margin-top 30px
