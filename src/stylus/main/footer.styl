@@ -16,12 +16,26 @@
 
 	.footer__col
 		float left
+		color $white
 
 	.footer__about
 		width 34%
+		padding-right 2%
+
+	.about__text
+		margin 25px 0 80px 0
+
+	.about__links-block
+		white-space nowrap
+
+	.links-block__link
+		text-transform uppercase
+		&:not(:last-child)
+			margin-right 5%
 
 	.footer__contacts
 		width 35%
+		padding-right 4%
 
 	.footer__subscribe
 		width 31%
@@ -39,6 +53,8 @@
 				opacity 1
 			.social__img_default
 				opacity 0
+		&:not(:last-child)
+			margin-right 5%
 
 		.social__img
 			sizeElement(20px, 20px)
@@ -48,3 +64,61 @@
 
 		.social__img_hover
 			opacity 0
+
+	.contacts__caption,
+	.subscribe__caption
+		@extend $robotoBlack
+		font-size linear-interpolation((320px 13px) (1600px 15px))
+		text-transform uppercase
+		margin-bottom 57px
+
+	.contacts__adress,
+	.contacts__phone
+		padding-left 30px
+		background-repeat no-repeat
+		background-position left top
+
+	.contacts__adress
+		min-height 22px
+		margin-bottom 20px
+		background-image url('../images/location.png')
+		background-size 100%
+		background-size 15px 22px 
+
+	.contacts__phone
+		display inline-block
+		min-height 16px
+		background-image url('../images/phone.png')
+		background-size 18px 16px
+
+	.subscribe__form
+		margin-bottom 30px
+		&:after
+			@extend $clearBoth
+
+	.form__submit
+		width 28%
+		float right
+		height $inputHeight
+		background-color $whiteSemi
+		position relative
+		cursor pointer
+
+	.form__email
+		height $inputHeight
+		line-height $inputHeight
+		border 1px solid $whiteSemi
+		padding 0 15px
+		text-overflow ellipsis
+		background-color transparent
+		color $white
+		width 68%
+		float left
+		&::placeholder
+			color $whiteSemi
+
+	.subscribe__social
+		margin-bottom 52px
+
+	.subscribe__copyright
+		text-align right

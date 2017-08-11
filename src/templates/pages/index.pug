@@ -95,7 +95,7 @@ block content
 					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi. Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi.
 				.about__links-block
 					each item in footerLinks
-						a(href=item.linkHref) #{item.linkContent}
+						a(href=item.linkHref).links-block__link #{item.linkContent}
 			.footer__col.footer__contacts
 				h4.contacts__caption our studio
 				p.contacts__adress Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat 11480 - Indonesia
@@ -103,8 +103,9 @@ block content
 			.footer__col.footer__subscribe
 				h4.subscribe__caption STAY IN TOUCH
 				form.subscribe__form
-					input(name="email-subscribe" placeholder="Subscribe our newsletter").form__email
-					button(type="submit")
+					input(name="email-subscribe" placeholder="Subscribe our newsletter" maxlength="20").form__email
+					button(type="submit").form__submit
+						img(src="./assets/images/send-icon.png" alt="")
 				.subscribe__social
 					each item in socialLinks
 						a(href=item.linkHref class="social__link social__link_" + item.imageId)
@@ -112,6 +113,7 @@ block content
 								use(xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-" + item.imageId)
 							svg(class="social__img social__img_hover")
 								use(xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-" + item.imageIdHover)
+				.subscribe__copyright Copyright © 2015 - Tajem Creative
 
 
 

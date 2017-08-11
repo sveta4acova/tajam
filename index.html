@@ -243,7 +243,7 @@
       <footer class="footer">
         <div class="footer__col footer__about"><a class="about__logo" href="/"><img src="./assets/images/logo-main.png"></a>
           <p class="about__text">lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi. Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi.</p>
-          <div class="about__links-block"><a href="/">help</a><a href="/">TERMS &amp; CONDITION</a><a href="/">PRIVACY</a>
+          <div class="about__links-block"><a class="links-block__link" href="/">help</a><a class="links-block__link" href="/">TERMS &amp; CONDITION</a><a class="links-block__link" href="/">PRIVACY</a>
           </div>
         </div>
         <div class="footer__col footer__contacts">
@@ -253,8 +253,8 @@
         <div class="footer__col footer__subscribe">
           <h4 class="subscribe__caption">STAY IN TOUCH</h4>
           <form class="subscribe__form">
-            <input class="form__email" name="email-subscribe" placeholder="Subscribe our newsletter">
-            <button type="submit"></button>
+            <input class="form__email" name="email-subscribe" placeholder="Subscribe our newsletter" maxlength="20">
+            <button class="form__submit" type="submit"><img src="./assets/images/send-icon.png" alt=""></button>
           </form>
           <div class="subscribe__social"><a class="social__link social__link_facebook" href="/">
               <svg class="social__img social__img_default">
@@ -282,6 +282,7 @@
                 <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-google-plus-purple"></use>
               </svg></a>
           </div>
+          <div class="subscribe__copyright">Copyright © 2015 - Tajem Creative</div>
         </div>
       </footer>
     </section>
