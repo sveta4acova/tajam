@@ -2,7 +2,8 @@ include ../blocks/data.pug
 
 section.header-container
 	header.header
-		img.header__logo(src="./assets/images/logo-header.png" alt="")
+		a(href="/").header__logo
+			img(src="./assets/images/logo-main.png" alt="")
 		nav.header__navigation
 			for link in headerLinks
 				a.navigation__link(href=link.linkAnchor) #{link.linkContent}

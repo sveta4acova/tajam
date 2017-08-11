@@ -10,7 +10,7 @@
   </head>
   <body>
     <section class="header-container">
-      <header class="header"><img class="header__logo" src="./assets/images/logo-header.png" alt="">
+      <header class="header"><a class="header__logo" href="/"><img src="./assets/images/logo-main.png" alt=""></a>
         <nav class="header__navigation"><a class="navigation__link" href="#home">home</a><a class="navigation__link" href="#about">about</a><a class="navigation__link" href="#expertise">expertise</a><a class="navigation__link" href="#teams">teams</a><a class="navigation__link" href="#works">works</a><a class="navigation__link" href="#comments">people say</a><a class="navigation__link" href="#contact">contact</a>
         </nav>
         <div class="header__menu-icon">
@@ -215,10 +215,13 @@
     <section class="clients-block">
       <div class="clients-block__feedback">
         <h2 class="feedback__caption">GIVE US A GOOD NEWS</h2>
-        <input name="name" placeholder="Name">
-        <input name="email" placeholder="Email">
-        <input name="phone" placeholder="Phone">
-        <textarea name="message" placeholder="Your Message"></textarea>
+        <form class="feedback__form">
+          <input class="form__name" name="name" placeholder="Name" maxlength="30">
+          <input class="form__email" name="email" placeholder="Email" maxlength="20">
+          <input class="form__phone" name="phone" placeholder="Phone">
+          <textarea class="form__message" name="message" placeholder="Your Message" maxlength="300"></textarea>
+          <button class="form__submit" type="submit">submit</button>
+        </form>
       </div>
       <div class="clients-block__group">
         <h2 class="group__caption">OUR HAPPY CLIENT</h2>
@@ -237,7 +240,50 @@
       </div>
     </section>
     <section class="footer-container">
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="footer__col footer__about"><a class="about__logo" href="/"><img src="./assets/images/logo-main.png"></a>
+          <p class="about__text">lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi. Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi.</p>
+          <div class="about__links-block"><a href="/">help</a><a href="/">TERMS &amp; CONDITION</a><a href="/">PRIVACY</a>
+          </div>
+        </div>
+        <div class="footer__col footer__contacts">
+          <h4 class="contacts__caption">our studio</h4>
+          <p class="contacts__adress">Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat 11480 - Indonesia</p><a class="contacts__phone" href="tel:+79780313052">+7 (978) 0313052</a>
+        </div>
+        <div class="footer__col footer__subscribe">
+          <h4 class="subscribe__caption">STAY IN TOUCH</h4>
+          <form class="subscribe__form">
+            <input class="form__email" name="email-subscribe" placeholder="Subscribe our newsletter">
+            <button type="submit"></button>
+          </form>
+          <div class="subscribe__social"><a class="social__link social__link_facebook" href="/">
+              <svg class="social__img social__img_default">
+                <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-facebook"></use>
+              </svg>
+              <svg class="social__img social__img_hover">
+                <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-facebook-purple"></use>
+              </svg></a><a class="social__link social__link_instagram" href="/">
+              <svg class="social__img social__img_default">
+                <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-instagram"></use>
+              </svg>
+              <svg class="social__img social__img_hover">
+                <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-instagram-purple"></use>
+              </svg></a><a class="social__link social__link_twitter" href="/">
+              <svg class="social__img social__img_default">
+                <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-twitter"></use>
+              </svg>
+              <svg class="social__img social__img_hover">
+                <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-twitter-purple"></use>
+              </svg></a><a class="social__link social__link_google-plus" href="/">
+              <svg class="social__img social__img_default">
+                <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-google-plus"></use>
+              </svg>
+              <svg class="social__img social__img_hover">
+                <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-google-plus-purple"></use>
+              </svg></a>
+          </div>
+        </div>
+      </footer>
     </section>
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="./assets/js/main.min.js"></script>

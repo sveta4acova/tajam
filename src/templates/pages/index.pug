@@ -73,10 +73,12 @@ block content
 	section.clients-block
 		.clients-block__feedback
 			h2.feedback__caption GIVE US A GOOD NEWS
-			input(name="name" placeholder="Name")
-			input(name="email" placeholder="Email")
-			input(name="phone" placeholder="Phone")
-			textarea(name="message" placeholder="Your Message")
+			form.feedback__form
+				input.form__name(name="name" placeholder="Name" maxlength="30")
+				input.form__email(name="email" placeholder="Email" maxlength="20")
+				input.form__phone(name="phone" placeholder="Phone")
+				textarea.form__message(name="message" placeholder="Your Message" maxlength="300")
+				button.form__submit(type="submit") submit
 		.clients-block__group
 			h2.group__caption OUR HAPPY CLIENT
 			.group__logo-container
@@ -86,5 +88,30 @@ block content
 
 	section.footer-container
 		footer.footer
+			.footer__col.footer__about
+				a(href="/").about__logo
+					img(src="./assets/images/logo-main.png")
+				p.about__text.
+					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi. Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi.
+				.about__links-block
+					each item in footerLinks
+						a(href=item.linkHref) #{item.linkContent}
+			.footer__col.footer__contacts
+				h4.contacts__caption our studio
+				p.contacts__adress Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat 11480 - Indonesia
+				a(href="tel:+79780313052").contacts__phone +7 (978) 0313052
+			.footer__col.footer__subscribe
+				h4.subscribe__caption STAY IN TOUCH
+				form.subscribe__form
+					input(name="email-subscribe" placeholder="Subscribe our newsletter").form__email
+					button(type="submit")
+				.subscribe__social
+					each item in socialLinks
+						a(href=item.linkHref class="social__link social__link_" + item.imageId)
+							svg(class="social__img social__img_default")
+								use(xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-" + item.imageId)
+							svg(class="social__img social__img_hover")
+								use(xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-" + item.imageIdHover)
+
 
 

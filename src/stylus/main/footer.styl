@@ -1,0 +1,50 @@
+.footer-container
+	position relative
+	background-image url('../images/backgrounds/image-05.jpg')
+	@extend $backgroundPosition
+	&:after
+		@extend $purpleShadow
+
+	.footer
+		@extend $mainContainer
+		@extend $blocksPadding
+		position relative
+		z-index 2
+
+		&:after
+			@extend $clearBoth
+
+	.footer__col
+		float left
+
+	.footer__about
+		width 34%
+
+	.footer__contacts
+		width 35%
+
+	.footer__subscribe
+		width 31%
+
+	.social__link
+		display inline-block
+		position relative
+		sizeElement(35px, 35px)
+		border 1px solid $white
+		border-radius 50%
+		@extend $transitionDefault
+		&:hover
+			background-color $white
+			.social__img_hover
+				opacity 1
+			.social__img_default
+				opacity 0
+
+		.social__img
+			sizeElement(20px, 20px)
+			@extend $absoluteElementPosition
+			@extend $centerElement
+			@extend $transitionDefault
+
+		.social__img_hover
+			opacity 0

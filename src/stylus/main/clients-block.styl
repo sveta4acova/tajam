@@ -23,10 +23,36 @@
 		sizeElement(34%, 70px)
 		max-width 162px
 		@extend $centerText
-		margin-bottom 15px
+		margin-bottom 18px
 		&:nth-child(odd)
 			margin-right 15%
 
 	img
 		sizeElement(100%, auto)
 		max-height 70px
+
+	.feedback__form
+		input, textarea
+			width 80%
+			padding 0 20px
+			color $grayLight
+			border 1px solid #e5e5e5
+			margin-bottom 20px
+			&::placeholder
+				color $grayLight
+
+		input
+			height 45px
+			line-height 45px
+			text-overflow ellipsis
+
+
+		textarea
+			height 200px
+			resize none
+			padding-top 15px
+			font-family "Roboto-Light"
+
+		.form__submit
+			@extend $accentLink
+			cursor pointer
