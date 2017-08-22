@@ -12,11 +12,40 @@
 		z-index 2
 
 	.carousel-commentators
-		width 310px
+		width 340px
+		padding 0 15px
 		@extend $centerElementMargin
 
+	.carousel-commentators__slide
+		@extend $transitionSlow
+		&.slick-center
+			transform scale(1.35)
+
 	.slide
-		height 50px
-		background-color red
+		sizeElement(50px, 50px)
+		background-color $grayLight
 		border-radius 50%
 		margin 0 auto
+		background-image url('../images/user.svg')
+
+	.slick-list
+		padding 20px 0 !important
+
+	.slick-arrow
+		font-size 0
+		sizeElement(10px, 20px)
+		background-size 100%
+		background-repeat no-repeat
+		background-color transparent
+		position absolute
+		@extend $centerElementY
+		top 50%
+		cursor pointer
+
+	.slick-prev
+		background-image url('../images/arrow_prev.png')
+		left 0
+
+	.slick-next
+		background-image url('../images/arrow_next.png')
+		right 0

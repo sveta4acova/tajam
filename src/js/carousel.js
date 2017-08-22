@@ -9,7 +9,9 @@ $(function(){
 
 		$('.carousel-comments').slick({
 			arrows: false,
-			dots: false
+			dots: false,
+			fade: true,
+			asNavFor: '.carousel-commentators'
 		});
 
 		$('.carousel-commentators').slick({
@@ -17,7 +19,16 @@ $(function(){
 			arrows: true,
 			loop: true,
 			centerPadding: '0',
-			centerMode: true
+			centerMode: true,
+			asNavFor: '.carousel-comments',
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 3
+					}
+				}
+			]
 		});
 
 	});

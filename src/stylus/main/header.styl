@@ -33,7 +33,10 @@
 	.navigation__link
 		@extend $textUppercase
 		@extend $robotoBlack
+		@extend $transitionDefault
 		margin-right 1rem
+		&.active
+			color $accentColor
 
 	.header__menu-icon
 		sizeElement(50px, 35px)

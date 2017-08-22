@@ -95,6 +95,11 @@ $accentLink
 	padding 10px 15px 8.5px 15px
 	background-color transparent
 	white-space nowrap
+	transition all .5s
+	&:hover
+		background-color $accentColor
+		color $white
+
 
 $clearBoth
 	content ''
@@ -161,7 +166,7 @@ $hugeFontSize
 	font-size linear-interpolation((320px 40px) (1600px 70px))
 
 $transitionDefault
-	transition all .3s;
+	transition all .3s
 
 $transitionSlow
-	transition all .5s;
+	transition all .5s

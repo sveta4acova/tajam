@@ -5,7 +5,7 @@ block content
 	include ../blocks/preview-block.pug
 	include ../blocks/comment-block.pug
 
-	section.home-block
+	section.home-block#home
 		.carousel-block
 			.carousel
 				each slide in carouselSlides
@@ -14,7 +14,7 @@ block content
 						p.slide__description #{slide.description}
 						a.slide__link(href="/") #{slide.link}
 
-	section.about-block
+	section.about-block#about
 		.story-container
 			.story-container__img
 				img(src="./assets/images/logo.png" alt="")
@@ -31,14 +31,14 @@ block content
 					img(src="./assets/images/play.png" alt="")
 				.btn-text WATCH OUR STORY
 
-	section.expertise-block
+	section.expertise-block#expertise
 		h2.expertise-block__caption EXPERTISE
 		p.expertise-block__description Lorem ipsum dolor sit amet proin gravida nibh vel velit
 		.short-description-block-wrapper
 			each item in shortDescriptionItems
 				+short-description-block(item)
 
-	section.team-block
+	section.team-block#teams
 		.team-block-container
 			h2.team-block__caption MEET OUR AMAZING TEAM
 			p.team-block__description Lorem ipsum dolor sit amet proin gravida nibh vel velit
@@ -48,7 +48,7 @@ block content
 			p.team-block__paragraph Become part of our dream team, let’s join us !
 			a.team-block__link(href="/") we are hiring
 
-	section.works-block
+	section.works-block#works
 		header.works-block__header
 			h2.header__caption our works
 			a(href="/").header__link-see See All Project in dribbble
@@ -60,7 +60,7 @@ block content
 							span learn more
 			a(href="/").preview-container__link load more
 
-	section.comments-block
+	section.comments-block#comments
 		.carousel-container
 			.carousel-comments
 				each item in commentBlocks
@@ -86,7 +86,7 @@ block content
 					.logo
 						img(alt="" src="./assets/images/clients/logo-0" + item + '.png')
 
-	section.footer-container
+	section.footer-container#contact
 		footer.footer
 			.footer__col.footer__about
 				a(href="/").about__logo
