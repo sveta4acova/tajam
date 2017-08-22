@@ -1,8 +1,8 @@
 $(function(){
-	$(document).scroll(function(){
-		var scrollValue = $(this).scrollTop();
-		scrollValue > 40 ? GLOBALS.$header.addClass('active') : GLOBALS.$header.removeClass('active');
-		console.log(555);
+	detectScrollTop();
+
+	$(document).scroll(function(e){
+		detectScrollTop();
 	});
 
 	var $header = $(".header"),
@@ -12,24 +12,6 @@ $(function(){
 			var linkHref = $(this).attr("href");
 			if (linkHref.length) { return linkHref; }
 		});
-
-	function activeHeaderLink(){
-		var scrollTop = $(window).scrollTop() + headerHeight + 15;
-		var scrolledItems = scrollToBlocks.map(function(){
-			var elemtTop = $(this).offset().top;
-			if (elemtTop < scrollTop) {
-				return this;
-			}
-		});
-		var lastScrolledItem = scrolledItems[scrolledItems.length - 1];
-
-		$headerLinks.removeClass('active');
-		$('.navigation__link[href="'+ lastScrolledItem +'"]').addClass('active');
-		if($(window).scrollTop() === $(document).height() - $(window).height()) {
-			$headerLinks.removeClass('active');
-			$('.navigation__link:last-child').addClass('active');
-		}
-	}
 
 	activeHeaderLink();
 
@@ -63,7 +45,7 @@ $(function(){
 
 	$(document).on('click', '.navigation__link', function(){
 		$(document).trigger(CustomEvents.MENU_CLOSE);
-	})
+	});
 
 	$(document).click(function(e) {
 		if( GLOBALS.$body.hasClass('open-menu') ) {
@@ -78,5 +60,26 @@ $(function(){
 		}
 	});
 
+	function activeHeaderLink(){
+		var scrollTop = $(window).scrollTop() + headerHeight + 15;
+		var scrolledItems = scrollToBlocks.map(function(){
+			var elemtTop = $(this).offset().top;
+			if (elemtTop < scrollTop) {
+				return this;
+			}
+		});
+		var lastScrolledItem = scrolledItems[scrolledItems.length - 1];
 
+		$headerLinks.removeClass('active');
+		$('.navigation__link[href="'+ lastScrolledItem +'"]').addClass('active');
+		if($(window).scrollTop() === $(document).height() - $(window).height()) {
+			$headerLinks.removeClass('active');
+			$('.navigation__link:last-child').addClass('active');
+		}
+	}
+
+	function detectScrollTop(){
+		var scrollValue = $(document).scrollTop();
+		scrollValue > 40 ? GLOBALS.$header.addClass('active') : GLOBALS.$header.removeClass('active');
+	}
 });

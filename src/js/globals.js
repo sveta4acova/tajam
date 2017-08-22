@@ -1,5 +1,6 @@
 var GLOBALS = {
 	$body: $('body'),
 	$menu: $('.menu-overlay'),
-	$menuOpenBtn: $('.header__menu-icon')
+	$menuOpenBtn: $('.header__menu-icon'),
+	$header: $('.header-container')
 }
