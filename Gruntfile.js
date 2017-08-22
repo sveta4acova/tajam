@@ -86,7 +86,7 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			dist: {
-				src: ['src/js/globals.js', 'src/js/carousel.js', 'src/js/menu.js' ],
+				src: ['src/js/globals.js', 'src/js/events.js', 'src/js/carousel.js', 'src/js/menu.js', 'src/js/form.js' ],
 				dest: 'tmp/main.js'
 			}
 		},

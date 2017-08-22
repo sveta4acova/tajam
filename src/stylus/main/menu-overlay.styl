@@ -1,0 +1,11 @@
+.menu-overlay
+	position fixed
+	top 0
+	right 0
+	sizeElement(50vw, 100%)
+	background-color $purpleShadow
+	z-index 100
+	transform translateX(100%)
+	@extend $transitionSlow
+	&.open
+		transform translateX(0%)
