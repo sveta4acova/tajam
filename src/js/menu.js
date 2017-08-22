@@ -21,12 +21,13 @@ $(function(){
 			}
 		});
 		var lastScrolledItem = scrolledItems[scrolledItems.length - 1];
-		console.log(lastScrolledItem);
-		// var currentElementId = lastScrolledItem.attr('id');
-		// console.log(currentElementId);
 
 		$headerLinks.removeClass('active');
 		$('.navigation__link[href="'+ lastScrolledItem +'"]').addClass('active');
+		if($(window).scrollTop() === $(document).height() - $(window).height()) {
+			$headerLinks.removeClass('active');
+			$('.navigation__link:last-child').addClass('active');
+		}
 	}
 
 	activeHeaderLink();
