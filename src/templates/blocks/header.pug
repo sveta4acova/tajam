@@ -6,7 +6,8 @@ section.header-container
 			img(src="./assets/images/logo-main.png" alt="")
 		nav.header__navigation
 			for link in headerLinks
-				a.navigation__link(class=link.linkClass href=link.linkAnchor) #{link.linkContent}
+				.navigation__link-container
+					a.navigation__link(class=link.linkClass href=link.linkAnchor) #{link.linkContent}
 
 		.header__menu-icon
 			.menu-icon__line

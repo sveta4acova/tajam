@@ -5,12 +5,15 @@ $(function(){
 		detectScrollTop();
 	});
 
+	$('.header .navigation__link-container').clone().appendTo('.link-container');
+
 	var $header = $(".header"),
 		headerHeight = $header.outerHeight(),
 		$headerLinks = $(".navigation__link"),
 		scrollToBlocks = $headerLinks.map(function(){
-			var linkHref = $(this).attr("href");
-			if (linkHref.length) { return linkHref; }
+				var linkHref = $(this).attr("href");
+				if (linkHref.length) { return linkHref;
+			}
 		});
 
 	activeHeaderLink();
@@ -32,31 +35,25 @@ $(function(){
 		});
 	});
 
-	$('.header .navigation__link').clone().appendTo('.link-container');
-
-	$(document).on('click', '.header__menu-icon', function(e){
+	$(document).on('click', '.header__menu-icon', function(){
 		$(document).trigger(CustomEvents.MENU_OPEN);
+		$(document).trigger(CustomEvents.SCROLL_DISABLE);
+	});
+
+	$(document).on('click', '.menu-overlay, .header__menu-icon', function(e){
 		e.stopPropagation();
 	});
 
-	$(document).on('click', '.menu-overlay', function(e){
-		e.stopPropagation();
-	});
-
-	$(document).on('click', '.navigation__link', function(){
+	$(document).on('click', '.navigation__link, .menu-overlay__close', function(){
 		$(document).trigger(CustomEvents.MENU_CLOSE);
+		$(document).trigger(CustomEvents.SCROLL_ENABLE);
 	});
 
 	$(document).click(function(e) {
-		if( GLOBALS.$body.hasClass('open-menu') ) {
+		if(GLOBALS.$body.hasClass('open-menu')){
 			$(document).trigger(CustomEvents.MENU_CLOSE);
+			$(document).trigger(CustomEvents.SCROLL_ENABLE);
 			e.preventDefault();
-		}
-	});
-
-	$(document).keyup(function(e) {
-		if( e.keyCode === 27 ) { // escape
-			$(document).trigger(CustomEvents.MENU_CLOSE);
 		}
 	});
 
@@ -74,7 +71,7 @@ $(function(){
 		$('.navigation__link[href="'+ lastScrolledItem +'"]').addClass('active');
 		if($(window).scrollTop() === $(document).height() - $(window).height()) {
 			$headerLinks.removeClass('active');
-			$('.navigation__link:last-child').addClass('active');
+			$('.navigation__link-container:last-child .navigation__link').addClass('active');
 		}
 	}
 

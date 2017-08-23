@@ -30,11 +30,14 @@
 		float right
 		@extend $transitionSlow
 
+	.navigation__link-container
+		display inline
+		margin-right 1rem
+
 	.navigation__link
 		@extend $textUppercase
 		@extend $robotoBlack
 		@extend $transitionDefault
-		margin-right 1rem
 		&.active
 			color $accentColor
 
@@ -45,9 +48,10 @@
 		top 50%
 		right 15px
 		@extend $transitionSlow
-
 		&:hover
 			cursor pointer
+		&.hide
+			opacity 0
 
 	.menu-icon__line
 		sizeElement(90%, 4px)

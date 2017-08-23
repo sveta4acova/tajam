@@ -11,13 +11,33 @@
   <body>
     <section class="header-container">
       <header class="header"><a class="header__logo" href="/"><img src="./assets/images/logo-main.png" alt=""></a>
-        <nav class="header__navigation"><a class="navigation__link active" href="#home">home</a><a class="navigation__link" href="#about">about</a><a class="navigation__link" href="#expertise">expertise</a><a class="navigation__link" href="#teams">teams</a><a class="navigation__link" href="#works">works</a><a class="navigation__link" href="#comments">people say</a><a class="navigation__link" href="#contact">contact</a>
+        <nav class="header__navigation">
+          <div class="navigation__link-container"><a class="navigation__link active" href="#home">home</a></div>
+          <div class="navigation__link-container"><a class="navigation__link" href="#about">about</a></div>
+          <div class="navigation__link-container"><a class="navigation__link" href="#expertise">expertise</a></div>
+          <div class="navigation__link-container"><a class="navigation__link" href="#teams">teams</a></div>
+          <div class="navigation__link-container"><a class="navigation__link" href="#works">works</a></div>
+          <div class="navigation__link-container"><a class="navigation__link" href="#comments">people say</a></div>
+          <div class="navigation__link-container"><a class="navigation__link" href="#contact">contact</a></div>
         </nav>
         <div class="header__menu-icon">
           <div class="menu-icon__line"></div>
         </div>
       </header>
     </section>
+    <div class="popup-success-container">
+      <div class="popup-success">
+        <div class="popup-success__text">Спасибо за Ваше обращение! Мы Вам обязательно ответим!</div>
+      </div><img class="popup-success__close" src="./assets/images/close.svg" alt="">
+    </div>
+    <div class="video-popup">
+      <video class="video" loop controls>
+        <source src="./assets/video/audi.mp4" type="video/mp4">
+      </video><img class="video-popup__close" src="./assets/images/close.svg" alt="">
+    </div>
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
     <section class="home-block" id="home">
       <div class="carousel-block">
         <div class="carousel">
@@ -216,10 +236,18 @@
       <div class="clients-block__feedback">
         <h2 class="feedback__caption">GIVE US A GOOD NEWS</h2>
         <form class="feedback__form">
-          <input class="form__name" name="name" placeholder="Name" maxlength="30">
-          <input class="form__email" name="email" placeholder="Email" maxlength="20">
-          <input class="form__phone" name="phone" placeholder="Phone">
-          <textarea class="form__message" name="message" placeholder="Your Message" maxlength="300"></textarea>
+          <div class="form-group">
+            <input class="form__name" type="text" name="name" placeholder="Name" minlength="2">
+          </div>
+          <div class="form-group">
+            <input class="form__email" type="text" name="email" placeholder="Email" minlength="5">
+          </div>
+          <div class="form-group">
+            <input class="form__phone" type="text" name="phone" placeholder="Phone">
+          </div>
+          <div class="form-group form-group_textarea">
+            <textarea class="form__message" name="message" placeholder="Your Message" maxlength="300" minlength="2"></textarea>
+          </div>
           <button class="form__submit" type="submit">submit</button>
         </form>
       </div>
@@ -253,7 +281,7 @@
         <div class="footer__col footer__subscribe">
           <h4 class="subscribe__caption">STAY IN TOUCH</h4>
           <form class="subscribe__form">
-            <input class="form__email" name="email-subscribe" placeholder="Subscribe our newsletter" maxlength="20">
+            <input class="form__email" name="email-subscribe" placeholder="Subscribe our newsletter" minlength="5">
             <button class="form__submit" type="submit"><img src="./assets/images/send-icon.png" alt=""></button>
           </form>
           <div class="subscribe__social"><a class="social__link social__link_facebook" href="/">
@@ -282,16 +310,19 @@
                 <use xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-google-plus-purple"></use>
               </svg></a>
           </div>
-          <div class="subscribe__copyright">Copyright © 2015 - Tajem Creative</div>
+          <div class="subscribe__copyright">Copyright © 2015 - Tajam Creative</div>
         </div>
       </footer>
     </section>
     <section class="menu-overlay">
-      <div class="link-container"></div>
+      <div class="link-container"></div><img class="menu-overlay__close" src="./assets/images/close.svg" alt="">
     </section>
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="./assets/js/main.min.js"></script>
     <script src="./assets/libs/slick-carousel/slick/slick.min.js"></script>
     <script src="./assets/libs/animatescroll/animatescroll.min.js"></script>
+    <script src="./assets/libs/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="./assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="./assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
   </body>
 </html>

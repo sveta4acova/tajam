@@ -4,7 +4,22 @@ block content
 	include ../blocks/short-description-block.pug
 	include ../blocks/preview-block.pug
 	include ../blocks/comment-block.pug
+	-var $popupSuccessText = 'Спасибо за Ваше обращение! Мы Вам обязательно ответим!'
+	include ../blocks/popup-success.pug
+	-
+		var videoSettings = {
+			muted: false,
+			poster: false,
+			autoplay: false,
+			loop: true,
+			controls: true,
+			src: './assets/video/audi.mp4',
+			type: 'video/mp4'
+		}
+	include ../blocks/video-popup.pug
 
+	#preloader
+		#loader
 	section.home-block#home
 		.carousel-block
 			.carousel
@@ -74,10 +89,14 @@ block content
 		.clients-block__feedback
 			h2.feedback__caption GIVE US A GOOD NEWS
 			form.feedback__form
-				input.form__name(name="name" placeholder="Name" maxlength="30")
-				input.form__email(name="email" placeholder="Email" maxlength="20")
-				input.form__phone(name="phone" placeholder="Phone")
-				textarea.form__message(name="message" placeholder="Your Message" maxlength="300")
+				.form-group
+					input.form__name(type="text" name="name" placeholder="Name" minlength="2")
+				.form-group
+					input.form__email(type="text" name="email" placeholder="Email" minlength="5")
+				.form-group
+					input.form__phone(type="text" name="phone" placeholder="Phone")
+				.form-group.form-group_textarea
+					textarea.form__message(name="message" placeholder="Your Message" maxlength="300" minlength="2")
 				button.form__submit(type="submit") submit
 		.clients-block__group
 			h2.group__caption OUR HAPPY CLIENT
@@ -103,7 +122,7 @@ block content
 			.footer__col.footer__subscribe
 				h4.subscribe__caption STAY IN TOUCH
 				form.subscribe__form
-					input(name="email-subscribe" placeholder="Subscribe our newsletter" maxlength="20").form__email
+					input(name="email-subscribe" placeholder="Subscribe our newsletter" minlength="5").form__email
 					button(type="submit").form__submit
 						img(src="./assets/images/send-icon.png" alt="")
 				.subscribe__social
@@ -113,10 +132,13 @@ block content
 								use(xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-" + item.imageId)
 							svg(class="social__img social__img_hover")
 								use(xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-" + item.imageIdHover)
-				.subscribe__copyright Copyright © 2015 - Tajem Creative
+				.subscribe__copyright Copyright © 2015 - Tajam Creative
 
 	section.menu-overlay
 		.link-container
+		img.menu-overlay__close(src="./assets/images/close.svg" alt="")
+
+
 
 
 

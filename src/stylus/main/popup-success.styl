@@ -1,0 +1,28 @@
+.popup-success-container
+	position fixed
+	top 0
+	left 0
+	sizeElement(100%, 100%)
+	background-color $purpleShadow
+	z-index 100
+	@extend $transitionSlow
+	transform translateY(-100%)
+	&.active
+		transform translateY(0)
+
+	.popup-success
+		max-width 500px
+		padding 50px
+		background-color $grayVeryLight
+		border 1px solid $gray
+		border-radius 10px
+		@extend $absoluteElementPosition
+		@extend $centerElement
+
+	.popup-success__text
+		color $blackPurple
+		@extend $middleFontSize
+		@extend $centerText
+
+	.popup-success__close
+		@extend $closeBtn

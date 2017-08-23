@@ -1,0 +1,40 @@
+#preloader
+	position fixed
+	sizeElement(100vw, 100%)
+	background-color $blackPurple
+	z-index 100
+	@extend $transitionSlow
+	opacity 1
+	visibility visible
+	&.hidden
+		opacity 0
+		visibility hidden
+
+	#loader
+		@extend $absoluteElementPosition
+		@extend $centerElement
+		sizeElement(100px, 100px)
+		border-radius 50%
+		border 3px solid transparent
+		border-top-color #dc79fc
+		animation spin 1.8s linear infinite
+		&:after,
+		&:before
+			@extend $pseudoElement
+			border-radius 50%
+			border 3px solid transparent
+		&:after
+			border-top-color #be1ff2
+			top 3px
+			bottom 3px
+			left 3px
+			right 3px
+			animation spin 2.5s linear infinite
+		&:before
+			border-top-color #a004d4
+			top 9px
+			bottom 9px
+			left 9px
+			right 9px
+			animation spin 1.2s linear infinite
+

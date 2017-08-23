@@ -1,0 +1,20 @@
+.video-popup
+	sizeElement(100%, 100%)
+	position fixed
+	top 0
+	left 0
+	background-color $purpleShadow
+	z-index 100
+	@extend $transitionSlow
+	transform translateY(100%)
+	&.active
+		transform translateY(0)
+
+	.video
+		sizeElement(80%, auto)
+		max-width 700px
+		@extend $absoluteElementPosition
+		@extend $centerElement
+
+	.video-popup__close
+		@extend $closeBtn

@@ -9,3 +9,21 @@
 	@extend $transitionSlow
 	&.open
 		transform translateX(0%)
+
+	.link-container
+		display inline-block
+		@extend $absoluteElementPosition
+		@extend $centerElement
+		@extend $centerText
+
+	.navigation__link
+		@extend $textUppercase
+		@extend $robotoBlack
+		@extend $bigFontSize
+		@extend $transitionDefault
+		&.active,
+		&:hover
+			color $accentColor
+
+	.menu-overlay__close
+		@extend $closeBtn

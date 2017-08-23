@@ -40,12 +40,13 @@
 			margin-bottom 20px
 			&::placeholder
 				color $grayLight
+			&.error
+				border-color $red
 
 		input
 			height $inputHeight
 			line-height $inputHeight
 			text-overflow ellipsis
-
 
 		textarea
 			height 200px
@@ -56,3 +57,17 @@
 		.form__submit
 			@extend $accentLink
 			cursor pointer
+
+	.form-group
+		position relative
+
+	label.error
+		position absolute
+		left 0
+		bottom 0
+		color $red
+		font-size: 12px;
+
+	.form-group_textarea
+		label.error
+			bottom 8px
