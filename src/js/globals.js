@@ -5,5 +5,6 @@ var GLOBALS = {
 	$menuOpenBtn: $('.header__menu-icon'),
 	$header: $('.header-container'),
 	$popupSuccess: $('.popup-success-container'),
-	$videoPopup: $('.video-popup')
-}
+	$videoPopup: $('.video-popup'),
+	$video: $('.video')
+};

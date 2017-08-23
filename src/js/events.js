@@ -47,4 +47,5 @@ $(document).on(CustomEvents.VIDEO_POPUP_OPEN, function(event) {
 $(document).on(CustomEvents.VIDEO_POPUP_CLOSE, function(event) {
 	GLOBALS.$body.removeClass('video-popup-open');
 	GLOBALS.$videoPopup.removeClass('active');
+	GLOBALS.$video.get(0).pause();
 });
