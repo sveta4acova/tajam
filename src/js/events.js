@@ -33,10 +33,15 @@ $(document).on(CustomEvents.POPUP_SUCCESS_CLOSE, function(event) {
 
 $(document).on(CustomEvents.SCROLL_DISABLE, function(event) {
 	GLOBALS.$body.addClass('scroll-disable');
+	GLOBALS.$body.niceScroll().remove();
 });
 
 $(document).on(CustomEvents.SCROLL_ENABLE, function(event) {
 	GLOBALS.$body.removeClass('scroll-disable');
+	GLOBALS.$body.niceScroll({
+		cursorborder: 'none',
+		cursorcolor: '#716e78'
+	});
 });
 
 $(document).on(CustomEvents.VIDEO_POPUP_OPEN, function(event) {

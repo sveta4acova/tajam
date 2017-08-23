@@ -1,6 +1,3 @@
 $(function(){
-	GLOBALS.$body.niceScroll({
-		cursorborder: 'none',
-		cursorcolor: '#716e78'
-	});
+	$(document).trigger(CustomEvents.SCROLL_ENABLE);
 });
