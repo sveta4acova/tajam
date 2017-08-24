@@ -21,6 +21,7 @@
     "animatescroll": "^1.0.7",
     "jquery-validation": "^1.17.0",
     "jquery.nicescroll": "^3.7.6",
-    "jquery-mask-plugin": "^1.14.11"
+    "jquery-mask-plugin": "^1.14.11",
+    "svg4everybody": "^2.1.9"
   }
 }

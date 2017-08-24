@@ -1,5 +1,7 @@
 $(function(){
 	$(document).ready(function() {
-		GLOBALS.$preloader.addClass('hidden');
+		setTimeout(function(){
+			GLOBALS.$preloader.addClass('hidden');
+		}, 1000);
 	});
 });
