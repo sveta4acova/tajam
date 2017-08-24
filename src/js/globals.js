@@ -6,5 +6,7 @@ var GLOBALS = {
 	$header: $('.header-container'),
 	$popupSuccess: $('.popup-success-container'),
 	$videoPopup: $('.video-popup'),
-	$video: $('.video')
+	$video: $('.video'),
+	OFFSET_START_ANIMATION: 250,
+	$expertiseBlock: $('#expertise')
 };

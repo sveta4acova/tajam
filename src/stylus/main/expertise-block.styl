@@ -1,6 +1,10 @@
 .expertise-block
 	@extend $mainContainer
 	@extend $blocksPadding
+	&.animate
+		.short-description-block
+			transform translate(0)
+			opacity 1
 
 	.expertise-block__caption,
 	.expertise-block__description
@@ -24,6 +28,9 @@
 		width calc(100%/3)
 		max-height 270px
 		overflow hidden
+		transform translate(50%, 10%)
+		opacity 0
+		transition all .8s linear
 
 		.short-description-block__img
 			display inline-block
@@ -35,6 +42,8 @@
 			&:nth-child({block}) .short-description-block__img
 				background-position-x -(-50px + (stepPositon * block))
 				background-position-y 0
+			&:nth-child({block})
+				transition-delay 0.5s * block
 
 		&:nth-child(1),
 		&:nth-child(2),
