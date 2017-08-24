@@ -5,6 +5,9 @@
 	&:before
 		@extend $purpleShadow
 		z-index 1
+	&.animate
+		.preview-block
+			animation rotateY 1s 1 forwards
 
 	.team-block-container
 		@extend $mainContainer
@@ -33,12 +36,16 @@
 	.preview-block
 		float left
 		width 23%
+		backface-visibility visible
+		opacity 0
 		&:not(:last-child)
 			margin-right 1%
 
 		for block in 1 2 3 4
 			&:nth-child({block}) .preview-block__img
 				background-image url('../images/team-photos/photo-0' + block + '.jpg')
+			&:nth-child({block})
+				animation-delay 0.5s * block
 
 	.preview-block__img
 		@extend $backgroundPosition

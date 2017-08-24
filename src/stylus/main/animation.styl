@@ -5,3 +5,23 @@
 	100%
 		transform rotate(360deg)
 
+@keyframes rotateY
+	from
+		transform: perspective(300px) rotate3d(0, 1, 0, 90deg);
+		animation-timing-function: ease-in;
+		opacity: 0;
+
+	40%
+		transform: perspective(300px) rotate3d(0, 1, 0, -20deg);
+		animation-timing-function: ease-in;
+
+	60%
+		transform: perspective(300px) rotate3d(0, 1, 0, 10deg);
+
+	80%
+		transform: perspective(300px) rotate3d(0, 1, 0, -5deg);
+
+	to
+		transform: perspective(300px);
+		opacity: 1;
+
