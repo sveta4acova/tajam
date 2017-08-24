@@ -128,9 +128,9 @@ block content
 				.subscribe__social
 					each item in socialLinks
 						a(href=item.linkHref class="social__link social__link_" + item.imageId)
-							svg(class="social__img social__img_default" viewBox="0 0 100 100")
+							svg(class="social__img social__img_default")
 								use(xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-" + item.imageId)
-							svg(class="social__img social__img_hover" viewBox="0 0 100 100")
+							svg(class="social__img social__img_hover")
 								use(xlink:href="./assets/images/sprites/social-icons-sprite.svg#shape-" + item.imageIdHover)
 				.subscribe__copyright Copyright © 2015 - Tajam Creative
 
