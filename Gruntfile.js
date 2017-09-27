@@ -108,7 +108,7 @@ module.exports = function(grunt) {
 					'Element title must not be empty.']
 			},
 			files: {
-				src: ['index.html']
+				src: ['*.html']
 			}
 		},
 

@@ -1,5 +1,7 @@
 extends ../blocks/default.pug
 block content
+	#preloader(style="background-color: #413d4b")
+		#loader
 	include ../blocks/data.pug
 	include ../blocks/short-description-block.pug
 	include ../blocks/preview-block.pug
@@ -17,9 +19,6 @@ block content
 			type: 'video/mp4'
 		}
 	include ../blocks/video-popup.pug
-
-	#preloader
-		#loader
 	section.home-block#home
 		.carousel-block
 			.carousel
@@ -109,7 +108,7 @@ block content
 		footer.footer
 			.footer__col.footer__about
 				a(href="/").about__logo
-					img(src="./assets/images/logo-main.png")
+					img(src="./assets/images/logo-main.png" alt="")
 				p.about__text.
 					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi. Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi.
 				.about__links-block

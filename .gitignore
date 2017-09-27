@@ -5,3 +5,6 @@ validation.xml
 validation-report.json
 validation-status.json
 index.html
+/assets/css/
+/assets/js/
+/assets/vendor/
