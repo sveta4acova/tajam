@@ -1,5 +1,5 @@
 var GLOBALS = {
-	$preloader: $('#preloader'),
+	$preloader: $('.preloader'),
 	$body: $('body'),
 	$menu: $('.menu-overlay'),
 	$menuOpenBtn: $('.header__menu-icon'),

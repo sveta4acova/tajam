@@ -1,6 +1,6 @@
 .team-block
 	@extend $backgroundPosition
-	background-image url(../images/backgrounds/image-03.jpg)
+	background-image url(../images/raster/backgrounds/image-03.jpg)
 	position relative
 	&:before
 		@extend $purpleShadow
@@ -43,7 +43,7 @@
 
 		for block in 1 2 3 4
 			&:nth-child({block}) .preview-block__img
-				background-image url('../images/team-photos/photo-0' + block + '.jpg')
+				background-image url('../images/raster/team-photos/photo-0' + block + '.jpg')
 			&:nth-child({block})
 				animation-delay 0.5s * block
 

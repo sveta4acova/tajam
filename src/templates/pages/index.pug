@@ -1,7 +1,7 @@
 extends ../blocks/default.pug
 block content
-	#preloader(style="background-color: #413d4b")
-		#loader
+	.preloader(style="background-color: #413d4b")
+		.loader
 	include ../blocks/data.pug
 	include ../blocks/short-description-block.pug
 	include ../blocks/preview-block.pug
@@ -31,7 +31,7 @@ block content
 	section.about-block#about
 		.story-container
 			.story-container__img
-				img(src="./assets/images/logo.png" alt="")
+				img(src="./assets/images/raster/logo.png" alt="")
 			.story-container__description
 				h2.description__caption OUR STORY
 				p.description__paragraph.
@@ -42,7 +42,7 @@ block content
 		.video-preview-container
 			.video-preview-container__play
 				.play-btn
-					img(src="./assets/images/play.png" alt="")
+					img(src="./assets/images/raster/play.png" alt="")
 				.btn-text WATCH OUR STORY
 
 	section.expertise-block#expertise
@@ -102,13 +102,13 @@ block content
 			.group__logo-container
 				each item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 					.logo
-						img(alt="" src="./assets/images/clients/logo-0" + item + '.png')
+						img(alt="" src="./assets/images/raster/clients/logo-0" + item + '.png')
 
 	section.footer-container#contact
 		footer.footer
 			.footer__col.footer__about
 				a(href="/").about__logo
-					img(src="./assets/images/logo-main.png" alt="")
+					img(src="./assets/images/raster/logo-main.png" alt="")
 				p.about__text.
 					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi. Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagi.
 				.about__links-block
@@ -123,7 +123,7 @@ block content
 				form.subscribe__form
 					input(name="email-subscribe" placeholder="Subscribe our newsletter" minlength="5").form__email
 					button(type="submit").form__submit
-						img(src="./assets/images/send-icon.png" alt="")
+						img(src="./assets/images/raster/send-icon.png" alt="")
 				.subscribe__social
 					each item in socialLinks
 						a(href=item.linkHref class="social__link social__link_" + item.imageId)
@@ -135,7 +135,7 @@ block content
 
 	section.menu-overlay
 		.link-container
-		img.menu-overlay__close(src="./assets/images/close.svg" alt="")
+		img.menu-overlay__close(src="./assets/images/vector/close.svg" alt="")
 
 
 

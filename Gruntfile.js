@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 
 		autoprefixer: {
 			options: {
-				browsers: ['last 6 versions']
+				browsers: ['last 8 versions', 'ie 8', 'chrome 30', 'opera 12', 'safari 8', 'firefox 15']
 			},
 			dist: {
 				files: {
@@ -65,6 +65,27 @@ module.exports = function(grunt) {
 			}
 		},
 
+		svgmin: {
+			options: {
+				plugins: [
+					{
+						removeViewBox: false
+					}, {
+						removeUselessStrokeAndFill: false
+					}
+				]
+			},
+			dist: {
+				files: [{
+					expand: true, //свойство, которое позволяет нам указать сразу все файлы, а не каждый по отдельности
+					cwd: 'src/images_full/vector', //папка в которой грунт возьмет файлы
+					src: ['**/*.svg'], //возьми все файлы (*) с расширением pug
+					dest: 'assets/images/vector', //скомпилируй их в корневую папку
+					ext: '.svg' //с расширением html
+				}]
+			}
+		},
+
 		svgstore: {
 			options: {
 				prefix: 'shape-', // This will prefix each <g> ID
@@ -75,7 +96,7 @@ module.exports = function(grunt) {
 			},
 			target: {
 				files: {
-					'assets/images/sprites/social-icons-sprite.svg': ['assets/images/icons/*.svg']
+					'assets/images/sprites/social-icons-sprite.svg': ['assets/images/vector/icons/*.svg']
 				}
 			}
 		},
@@ -110,6 +131,28 @@ module.exports = function(grunt) {
 			files: {
 				src: ['*.html']
 			}
+		},
+
+		// stylelint: {
+		// 	options: {
+		// 		configFile: '.stylelintrc',
+		// 		formatter: 'string',
+		// 		ignoreDisables: false,
+		// 		failOnError: true,
+		// 		outputFile: '',
+		// 		reportNeedlessDisables: false,
+		// 		syntax: ''
+		// 	},
+		// 	src: [
+		// 		'tmp/styles.css'
+		// 	]
+		// },
+
+		csslint: {
+			options: {
+				csslintrc: '.csslintrc'
+			},
+			src: ['tmp/styles.css']
 		},
 
 		watch: {
@@ -148,14 +191,20 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-svgstore');
+	grunt.loadNpmTasks('grunt-svgmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-w3c-html-validation');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
+	// grunt.loadNpmTasks( 'grunt-stylelint' );
 
   // Default task(s).
 	grunt.registerTask('build_styles', ['concat_css', 'stylus', 'autoprefixer', 'cssmin']);
 	grunt.registerTask('build_js', ['concat', 'uglify']);
-	grunt.registerTask('svg_concat', ['svgstore']);
+	// grunt.registerTask('stylelint_task', ['stylelint']);
+	grunt.registerTask('checkcss', ['csslint']);
+	grunt.registerTask('build_svg', ['svgmin', 'svgstore']);
 	grunt.registerTask('html_validation', ['validation']);
-	grunt.registerTask('default', ['pug', 'build_styles', 'build_js', 'watch']);
+	grunt.registerTask('build', ['build_svg', 'pug', 'build_styles', 'build_js']);
+	grunt.registerTask('default', ['build', 'watch']);
 };

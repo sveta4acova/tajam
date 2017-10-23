@@ -27,7 +27,7 @@
 		position relative
 		height 550px
 		@extend $backgroundPosition
-		background-image url(../images/backgrounds/image-02.jpg)
+		background-image url(../images/raster/backgrounds/image-02.jpg)
 		&:after
 			@extend $purpleShadow
 
@@ -38,18 +38,21 @@
 		@extend $centerText
 
 	.play-btn
+		@extend $transitionDefault
 		display inline-block
 		sizeElement(100px, 100px)
 		position relative
 		border-radius 50%
 		border 2px solid $white
 		cursor pointer
+		transform scale(0.9)
+		&:hover
+			transform scale(1)
 
 		img
 			@extend $absoluteElementPosition
 			@extend $centerElement
 			left 54%
-
 
 	.btn-text
 		@extend $robotoBlack
